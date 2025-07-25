@@ -1,15 +1,20 @@
 package com.algaworks.algadelivery.delivery.tracking.domain.model;
 
 import com.algaworks.algadelivery.delivery.tracking.domain.exception.DomainException;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.util.*;
 
+@Entity
+@Table
 public class Delivery {
 
+    @Id
     private UUID id;
+
     private UUID courierId;
 
     private DeliveryStatus status;
@@ -25,13 +30,32 @@ public class Delivery {
 
     private Integer totalItems;
 
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "zipCode", column = @Column(name = "sender_zip_code")),
+            @AttributeOverride(name = "street", column = @Column(name = "sender_street")),
+            @AttributeOverride(name = "number", column = @Column(name = "sender_number")),
+            @AttributeOverride(name = "complement", column = @Column(name = "sender_complement")),
+            @AttributeOverride(name = "name", column = @Column(name = "sender_name")),
+            @AttributeOverride(name = "phone", column = @Column(name = "sender_phone"))
+    })
     private ContactPoint sender;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "zipCode", column = @Column(name = "recipient_zip_code")),
+            @AttributeOverride(name = "street", column = @Column(name = "recipient_street")),
+            @AttributeOverride(name = "number", column = @Column(name = "recipient_number")),
+            @AttributeOverride(name = "complement", column = @Column(name = "recipient_complement")),
+            @AttributeOverride(name = "name", column = @Column(name = "recipient_name")),
+            @AttributeOverride(name = "phone", column = @Column(name = "recipient_phone"))
+    })
     private ContactPoint recipient;
 
-    // @OneToMany(mappedBy = "delivery")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "delivery")
     private List<Item> items = new ArrayList<>();
 
-    Delivery(){}
+    protected Delivery(){}
 
     // Aqui, pudemos definir um objeto no estado padrão, totalmente controlável pela própria classe
     // Evita inconsistências durante o desenvolvimento
@@ -49,7 +73,7 @@ public class Delivery {
 
     // Apenas Delivery (aggregate root) pode modificar a lista de Items
     public UUID addItem(String itemName, int quantity){
-        Item item = Item.brandNew(itemName, quantity);
+        Item item = Item.brandNew(itemName, quantity, this);
         items.add(item);
         calculateTotalItems();
         return item.getId();
