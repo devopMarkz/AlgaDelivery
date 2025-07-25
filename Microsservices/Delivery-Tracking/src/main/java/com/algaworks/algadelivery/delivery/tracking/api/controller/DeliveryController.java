@@ -5,6 +5,7 @@ import com.algaworks.algadelivery.delivery.tracking.api.model.DeliveryInput;
 import com.algaworks.algadelivery.delivery.tracking.domain.exception.DomainException;
 import com.algaworks.algadelivery.delivery.tracking.domain.model.Delivery;
 import com.algaworks.algadelivery.delivery.tracking.domain.repository.DeliveryRepository;
+import com.algaworks.algadelivery.delivery.tracking.domain.service.DeliveryCheckpointService;
 import com.algaworks.algadelivery.delivery.tracking.domain.service.DeliveryPreparationService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Pageable;
@@ -22,11 +23,14 @@ public class DeliveryController {
 
     private final DeliveryPreparationService deliveryPreparationService;
     private final DeliveryRepository deliveryRepository;
+    private final DeliveryCheckpointService deliveryCheckpointService;
 
     public DeliveryController(DeliveryPreparationService deliveryPreparationService,
-                              DeliveryRepository deliveryRepository) {
+                              DeliveryRepository deliveryRepository,
+                              DeliveryCheckpointService deliveryCheckpointService) {
         this.deliveryPreparationService = deliveryPreparationService;
         this.deliveryRepository = deliveryRepository;
+        this.deliveryCheckpointService = deliveryCheckpointService;
     }
 
     @PostMapping
@@ -56,18 +60,18 @@ public class DeliveryController {
 
     @PostMapping("/{deliveryId}/placement")
     public void place(@PathVariable UUID deliveryId) {
-
+        deliveryCheckpointService.place(deliveryId);
     }
 
     @PostMapping("/{deliveryId}/pickups")
     public void pickup(@PathVariable UUID deliveryId,
                        @Valid @RequestBody CourierIdInput input) {
-        
+        deliveryCheckpointService.pickUp(deliveryId, input.getCourierId());
     }
 
     @PostMapping("/{deliveryId}/completion")
     public void complete(@PathVariable UUID deliveryId) {
-
+        deliveryCheckpointService.complete(deliveryId);
     }
 
 }
