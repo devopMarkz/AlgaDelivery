@@ -1,11 +1,18 @@
 package com.algaworks.algadelivery.delivery.tracking.api.controller;
 
+import com.algaworks.algadelivery.delivery.tracking.api.model.CourierIdInput;
 import com.algaworks.algadelivery.delivery.tracking.api.model.DeliveryInput;
+import com.algaworks.algadelivery.delivery.tracking.domain.exception.DomainException;
 import com.algaworks.algadelivery.delivery.tracking.domain.model.Delivery;
+import com.algaworks.algadelivery.delivery.tracking.domain.repository.DeliveryRepository;
 import com.algaworks.algadelivery.delivery.tracking.domain.service.DeliveryPreparationService;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.data.web.PagedModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.UUID;
 
@@ -14,9 +21,12 @@ import java.util.UUID;
 public class DeliveryController {
 
     private final DeliveryPreparationService deliveryPreparationService;
+    private final DeliveryRepository deliveryRepository;
 
-    public DeliveryController(DeliveryPreparationService deliveryPreparationService) {
+    public DeliveryController(DeliveryPreparationService deliveryPreparationService,
+                              DeliveryRepository deliveryRepository) {
         this.deliveryPreparationService = deliveryPreparationService;
+        this.deliveryRepository = deliveryRepository;
     }
 
     @PostMapping
@@ -31,5 +41,33 @@ public class DeliveryController {
         return deliveryPreparationService.edit(deliveryId, input);
     }
 
+    @GetMapping
+    public PagedModel<Delivery> findAll(@PageableDefault(page = 0, size = 10) Pageable pageable) {
+        return new PagedModel<>(
+                deliveryRepository.findAll(pageable)
+        );
+    }
+
+    @GetMapping("{deliveryId}")
+    public Delivery findById(@PathVariable UUID deliveryId) {
+        return deliveryRepository.findById(deliveryId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    }
+
+    @PostMapping("/{deliveryId}/placement")
+    public void place(@PathVariable UUID deliveryId) {
+
+    }
+
+    @PostMapping("/{deliveryId}/pickups")
+    public void pickup(@PathVariable UUID deliveryId,
+                       @Valid @RequestBody CourierIdInput input) {
+        
+    }
+
+    @PostMapping("/{deliveryId}/completion")
+    public void complete(@PathVariable UUID deliveryId) {
+
+    }
 
 }
