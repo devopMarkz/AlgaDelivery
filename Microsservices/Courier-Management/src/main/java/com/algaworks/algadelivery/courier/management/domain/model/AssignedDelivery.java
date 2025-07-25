@@ -1,5 +1,9 @@
 package com.algaworks.algadelivery.courier.management.domain.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
 import java.time.OffsetDateTime;
 import java.util.Objects;
 import java.util.UUID;
@@ -8,19 +12,33 @@ import java.util.UUID;
 // SETTER (AccessLevel.PRIVATE)
 // No ArgsConstructor(AccessLevel.PACKAGE)
 // Equals And Hashcode
+@Entity
 public class AssignedDelivery {
 
+    @Id
     private UUID id;
+
     private OffsetDateTime assignedAt;
+
+    @ManyToOne(optional = false)
+    private Courier courier;
 
     AssignedDelivery() {
     }
 
-    static AssignedDelivery pending(UUID deliveryId) {
+    static AssignedDelivery pending(UUID deliveryId, Courier courier) {
         AssignedDelivery delivery = new AssignedDelivery();
         delivery.setId(deliveryId);
-        delivery.setAssignedAt(OffsetDateTime.now());
+        delivery.setCourier(courier);
         return delivery;
+    }
+
+    private Courier getCourier() {
+        return courier;
+    }
+
+    private void setCourier(Courier courier) {
+        this.courier = courier;
     }
 
     public UUID getId() {
