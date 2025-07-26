@@ -6,8 +6,10 @@ import com.algaworks.algadelivery.delivery.tracking.api.model.ItemInput;
 import com.algaworks.algadelivery.delivery.tracking.domain.exception.DomainException;
 import com.algaworks.algadelivery.delivery.tracking.domain.model.ContactPoint;
 import com.algaworks.algadelivery.delivery.tracking.domain.model.Delivery;
+import com.algaworks.algadelivery.delivery.tracking.domain.model.DeliveryEstimate;
 import com.algaworks.algadelivery.delivery.tracking.domain.repository.DeliveryRepository;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,9 +22,15 @@ import java.util.UUID;
 public class DeliveryPreparationService {
 
     private final DeliveryRepository deliveryRepository;
+    private final DeliveryTimeEstimationService deliveryTimeEstimationService;
+    private final CourierPayoutCalculationService courierPayoutCalculationService;
 
-    public DeliveryPreparationService(DeliveryRepository deliveryRepository) {
+    public DeliveryPreparationService(DeliveryRepository deliveryRepository,
+                                      @Qualifier(value = "deliveryTimeEstimationServiceFakeImpl") DeliveryTimeEstimationService deliveryTimeEstimationService,
+                                      CourierPayoutCalculationService courierPayoutCalculationService) {
         this.deliveryRepository = deliveryRepository;
+        this.deliveryTimeEstimationService = deliveryTimeEstimationService;
+        this.courierPayoutCalculationService = courierPayoutCalculationService;
     }
 
     @Transactional
@@ -62,15 +70,16 @@ public class DeliveryPreparationService {
                 recipientInput.getPhone()
         );
 
-        BigDecimal distanceFee = new BigDecimal("10");
-        Duration expectedDeliveryTime = Duration.ofHours(3);
-        BigDecimal payout = new BigDecimal("10");
+        DeliveryEstimate estimate = deliveryTimeEstimationService.estimate(sender, recipient);
+        BigDecimal calculatedPayout = courierPayoutCalculationService.calculatePayout(estimate.getDistanceInKm());
+
+        BigDecimal distanceFee = calculateFee(estimate.getDistanceInKm());
 
         var preparationDetails = Delivery.PreparationDetails.builder()
                 .recipient(recipient)
                 .sender(sender)
-                .expectedDeliveryTime(expectedDeliveryTime)
-                .courierPayout(payout)
+                .expectedDeliveryTime(estimate.getEstimatedTime())
+                .courierPayout(calculatedPayout)
                 .distanceFee(distanceFee)
                 .build();
 
@@ -79,5 +88,11 @@ public class DeliveryPreparationService {
         for (ItemInput itemInput : input.getItems()) {
             delivery.addItem(itemInput.getName(), itemInput.getQuantity());
         }
+    }
+
+    private BigDecimal calculateFee(Double distanceInKm) {
+        return new BigDecimal("3")
+                .multiply(new BigDecimal(distanceInKm))
+                .setScale(2, BigDecimal.ROUND_HALF_EVEN);
     }
 }

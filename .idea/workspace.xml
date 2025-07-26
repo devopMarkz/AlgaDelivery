@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70197d1c-fec1-4c02-88df-7420467ff717" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/api/controller/CourierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/domain/service/CourierRegistrationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/domain/model/CourierPayoutCalculationInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/domain/model/CourierPayoutResultModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/domain/service/CourierPayoutService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/domain/model/DeliveryEstimate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/domain/service/CourierPayoutCalculationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/domain/service/DeliveryTimeEstimationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/infraestructure/fake/DeliveryTimeEstimationServiceFakeImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/infraestructure/http/client/CourierApiClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/infraestructure/http/client/CourierApiClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/infraestructure/http/client/CourierPayoutCalculationInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/infraestructure/http/client/CourierPayoutCalculationServiceHttpImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/infraestructure/http/client/CourierPayoutResultModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/api/controller/CourierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/api/controller/CourierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/domain/service/DeliveryPreparationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/domain/service/DeliveryPreparationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +31,8 @@
       <list>
         <option value="Enum" />
         <option value="Exception" />
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -36,42 +48,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.DeliveryRepositoryTest.shouldPersist.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DeliveryStatusTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DeliveryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DeliveryTest.shouldNotPlace.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.CourierManagementApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DeliveryTrackingApplication.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Marcos Andre/Desktop/AlgaWorks/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/domain/model&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.62413794&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.DeliveryRepositoryTest.shouldPersist.executor": "Run",
+    "JUnit.DeliveryStatusTest.executor": "Run",
+    "JUnit.DeliveryTest.executor": "Run",
+    "JUnit.DeliveryTest.shouldNotPlace.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.CourierManagementApplication.executor": "Run",
+    "Spring Boot.DeliveryTrackingApplication.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Marcos Andre/Desktop/AlgaWorks/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/domain/model",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.62413794",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.algaworks.algadelivery.courier.management.domain.service" />
+      <recent name="com.algaworks.algadelivery.courier.management.domain.model" />
+      <recent name="com.algaworks.algadelivery.delivery.tracking.domain.model" />
       <recent name="com.algaworks.algadelivery.delivery.tracking.api.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Marcos Andre\Desktop\AlgaWorks\Microsservices\Delivery-Tracking\src\main\java\com\algaworks\algadelivery\delivery\tracking\domain\model" />
       <recent name="C:\Users\Marcos Andre\Desktop\AlgaWorks\Microsservices\Courier-Management\src\main\java\com\algaworks\algadelivery\courier\management\domain\model" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -82,7 +98,7 @@
       <recent name="com.algaworks.algadelivery.delivery.tracking.domain.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.CourierManagementApplication">
+  <component name="RunManager" selected="Spring Boot.DeliveryTrackingApplication">
     <configuration name="DeliveryRepositoryTest.shouldPersist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Delivery-Tracking" />
       <extension name="coverage">
@@ -103,7 +119,7 @@
       <module name="Delivery-Tracking" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.algaworks.algadelivery.delivery.tracking.domain.model.*" />
+          <option name="PATTERN" value="com.algaworks.algadelivery.delivery.tracking.infraestructure.http.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,7 +134,7 @@
       <module name="Delivery-Tracking" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.algaworks.algadelivery.delivery.tracking.domain.model.*" />
+          <option name="PATTERN" value="com.algaworks.algadelivery.delivery.tracking.infraestructure.http.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,7 +149,7 @@
       <module name="Delivery-Tracking" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.algaworks.algadelivery.delivery.tracking.domain.model.*" />
+          <option name="PATTERN" value="com.algaworks.algadelivery.delivery.tracking.infraestructure.http.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -187,7 +203,7 @@
       <workItem from="1753289448364" duration="9465000" />
       <workItem from="1753356914413" duration="883000" />
       <workItem from="1753400156140" duration="13976000" />
-      <workItem from="1753484415839" duration="4725000" />
+      <workItem from="1753484415839" duration="11534000" />
     </task>
     <servers />
   </component>
