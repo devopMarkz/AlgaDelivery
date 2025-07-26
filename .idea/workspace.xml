@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70197d1c-fec1-4c02-88df-7420467ff717" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/domain/model/CourierPayoutCalculationInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/domain/model/CourierPayoutResultModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/domain/service/CourierPayoutService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/domain/model/DeliveryEstimate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/domain/service/CourierPayoutCalculationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/domain/service/DeliveryTimeEstimationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/infraestructure/fake/DeliveryTimeEstimationServiceFakeImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/infraestructure/http/client/CourierApiClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/infraestructure/http/client/CourierApiClientConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/infraestructure/http/client/CourierPayoutCalculationInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/infraestructure/http/client/CourierPayoutCalculationServiceHttpImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/infraestructure/http/client/CourierPayoutResultModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/src/test/java/com/algaworks/algadelivery/courier/management/api/controller/CourierControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/src/test/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/api/controller/CourierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/src/main/java/com/algaworks/algadelivery/courier/management/api/controller/CourierController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/domain/service/DeliveryPreparationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/domain/service/DeliveryPreparationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Microsservices/Courier-Management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Microsservices/Courier-Management/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +20,9 @@
       <list>
         <option value="Enum" />
         <option value="Exception" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -50,6 +39,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.CourierControllerTest.shouldReturn200.executor": "Run",
+    "JUnit.CourierControllerTest.shouldReturn201.executor": "Run",
     "JUnit.DeliveryRepositoryTest.shouldPersist.executor": "Run",
     "JUnit.DeliveryStatusTest.executor": "Run",
     "JUnit.DeliveryTest.executor": "Run",
@@ -67,7 +58,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Marcos Andre/Desktop/AlgaWorks/Microsservices/Delivery-Tracking/src/main/java/com/algaworks/algadelivery/delivery/tracking/domain/model",
+    "last_opened_file_path": "C:/Users/Marcos Andre/Desktop/AlgaWorks/Microsservices/Courier-Management/src/test/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,6 +78,7 @@
       <recent name="com.algaworks.algadelivery.delivery.tracking.api.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Marcos Andre\Desktop\AlgaWorks\Microsservices\Courier-Management\src\test\resources" />
       <recent name="C:\Users\Marcos Andre\Desktop\AlgaWorks\Microsservices\Delivery-Tracking\src\main\java\com\algaworks\algadelivery\delivery\tracking\domain\model" />
       <recent name="C:\Users\Marcos Andre\Desktop\AlgaWorks\Microsservices\Courier-Management\src\main\java\com\algaworks\algadelivery\courier\management\domain\model" />
     </key>
@@ -94,11 +86,44 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.algaworks.algadelivery.courier.management.api.controller" />
       <recent name="com.algaworks.algadelivery.delivery.tracking.domain.repository" />
       <recent name="com.algaworks.algadelivery.delivery.tracking.domain.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.DeliveryTrackingApplication">
+  <component name="RunManager" selected="JUnit.CourierControllerTest.shouldReturn200">
+    <configuration name="CourierControllerTest.shouldReturn200" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Courier-Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.algaworks.algadelivery.courier.management.api.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.algaworks.algadelivery.courier.management.api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.algaworks.algadelivery.courier.management.api.controller.CourierControllerTest" />
+      <option name="METHOD_NAME" value="shouldReturn200" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CourierControllerTest.shouldReturn201" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Courier-Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.algaworks.algadelivery.courier.management.api.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.algaworks.algadelivery.courier.management.api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.algaworks.algadelivery.courier.management.api.controller.CourierControllerTest" />
+      <option name="METHOD_NAME" value="shouldReturn201" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DeliveryRepositoryTest.shouldPersist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Delivery-Tracking" />
       <extension name="coverage">
@@ -125,21 +150,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.algaworks.algadelivery.delivery.tracking.domain.model" />
       <option name="MAIN_CLASS_NAME" value="com.algaworks.algadelivery.delivery.tracking.domain.model.DeliveryStatusTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DeliveryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Delivery-Tracking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.algaworks.algadelivery.delivery.tracking.infraestructure.http.client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.algaworks.algadelivery.delivery.tracking.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="com.algaworks.algadelivery.delivery.tracking.domain.model.DeliveryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,10 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CourierControllerTest.shouldReturn200" />
+        <item itemvalue="JUnit.CourierControllerTest.shouldReturn201" />
         <item itemvalue="JUnit.DeliveryRepositoryTest.shouldPersist" />
         <item itemvalue="JUnit.DeliveryStatusTest" />
         <item itemvalue="JUnit.DeliveryTest.shouldNotPlace" />
-        <item itemvalue="JUnit.DeliveryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +214,7 @@
       <workItem from="1753289448364" duration="9465000" />
       <workItem from="1753356914413" duration="883000" />
       <workItem from="1753400156140" duration="13976000" />
-      <workItem from="1753484415839" duration="11534000" />
+      <workItem from="1753484415839" duration="13313000" />
     </task>
     <servers />
   </component>
